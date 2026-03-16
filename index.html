@@ -115,7 +115,7 @@
     <div id="orderModal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center px-4 transition-opacity">
         <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <h3 class="text-2xl font-extrabold mb-2 text-gray-800" id="modalTitle">Form Pemesanan</h3>
-            <p class="text-sm text-gray-600 mb-6">Hubungi CS Telegram <b>@Customer_Service_AutoInvoice_bot</b> ini untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.</p>
+            <p class="text-sm text-gray-600 mb-6">Hubungi CS Telegram <b>@CS_Auto_invoice_bot</b> ini untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.</p>
             
             <form id="orderForm" onsubmit="submitForm(event)">
                 <input type="hidden" id="pkgName">
@@ -124,7 +124,11 @@
                     <label class="block text-gray-700 font-bold mb-2 text-sm">Nama Client / Perusahaan</label>
                     <input type="text" id="clientName" required placeholder="Contoh: PT. Maju Jaya / Budi" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
-                <div class="mb-6">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2 text-sm">No. HP (WA/Telegram)</label>
+                    <input type="tel" id="clientPhone" required placeholder="Contoh: 081234567890" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-8">
                     <label class="block text-gray-700 font-bold mb-2 text-sm">Pembayaran via apa?</label>
                     <select id="paymentMethod" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
                         <option value="Transfer BCA">Transfer BCA</option>
@@ -156,6 +160,7 @@
             e.preventDefault();
             const pkg = document.getElementById('pkgName').value;
             const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
             const payment = document.getElementById('paymentMethod').value;
             
             // Ambil tanggal saat ini (format lokal)
@@ -164,10 +169,10 @@
             
             // Format pesan tracking
             const price = document.getElementById('pkgPrice').value;
-            const text = `Halo CS, saya ingin memesan setup Auto Invoice:\n\n📅 Tanggal: ${dateStr}\n👤 Client: ${name}\n📦 Paket: ${pkg}\n💰 Harga: ${price}\n💳 Pembayaran via: ${payment}\n\nMohon bantuannya untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.\n\n---\n🏦 Info Pembayaran:\nMandiri: 1490015072418\nE-Wallet: 081258220963\n\n📌 CATATAN:\nMohon kirim bukti Pembayaran ke chat ini sebelum kami proses. Lalu setelah diproses, Telegram akan otomatis mengirimkan status BERHASIL dan Anda bisa mengecek paket yang sudah dipilih.`;
+            const text = `Halo CS, saya ingin memesan setup Auto Invoice:\n\n📅 Tanggal: ${dateStr}\n👤 Client: ${name}\n📱 No. HP: ${phone}\n📦 Paket: ${pkg}\n💰 Harga: ${price}\n💳 Pembayaran via: ${payment}\n\nMohon bantuannya untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.\n\n---\n🏦 Info Pembayaran:\nMandiri: 1490015072418\nE-Wallet: 081258220963\n\n📌 CATATAN:\nMohon kirim bukti Pembayaran ke chat ini sebelum kami proses. Lalu setelah diproses, Telegram akan otomatis mengirimkan status BERHASIL dan Anda bisa mengecek paket yang sudah dipilih.`;
             
             const encodedText = encodeURIComponent(text);
-            window.open(`https://t.me/Customer_Service_AutoInvoice_bot?text=${encodedText}`, '_blank');
+            window.open(`https://t.me/CS_Auto_invoice_bot?text=${encodedText}`, '_blank');
             closeModal();
         }
     </script>
