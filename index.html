@@ -124,12 +124,15 @@
                     <label class="block text-gray-700 font-bold mb-2 text-sm">Nama Client / Perusahaan</label>
                     <input type="text" id="clientName" required placeholder="Contoh: PT. Maju Jaya / Budi" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2 text-sm">No. HP (WA/Telegram)</label>
+                    <input type="tel" id="clientPhone" required placeholder="Contoh: 081234567890" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
                 <div class="mb-6">
                     <label class="block text-gray-700 font-bold mb-2 text-sm">Pembayaran via apa?</label>
                     <select id="paymentMethod" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
                         <option value="Transfer BCA">Transfer BCA</option>
                         <option value="Transfer Mandiri">Transfer Mandiri</option>
-                        <option value="Transfer BRI">Transfer BRI</option>
                         <option value="Transfer BNI">Transfer BNI</option>
                         <option value="QRIS">QRIS</option>
                         <option value="E-Wallet">E-Wallet (OVO/Dana/GoPay)</option>
@@ -157,6 +160,7 @@
             e.preventDefault();
             const pkg = document.getElementById('pkgName').value;
             const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
             const payment = document.getElementById('paymentMethod').value;
             
             // Ambil tanggal saat ini (format lokal)
@@ -165,7 +169,7 @@
             
             // Format pesan tracking
             const price = document.getElementById('pkgPrice').value;
-            const text = `Halo CS, saya ingin memesan setup Auto Invoice:\n\n📅 Tanggal: ${dateStr}\n👤 Client: ${name}\n📱No.WA/Telegram : ${phone} 📦 Paket: ${pkg}\n💰 Harga: ${price}\n💳 Pembayaran via: ${payment}\n\nMohon bantuannya untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.\n\n---\n🏦 Info Pembayaran:\nMandiri: 1490015072418\nE-Wallet: 081258220963\n\n📌 CATATAN:\nMohon kirim bukti Pembayaran ke chat ini sebelum kami proses. Lalu setelah diproses, Telegram akan otomatis mengirimkan status BERHASIL dan Anda bisa mengecek paket yang sudah dipilih.`;
+            const text = `Halo CS, saya ingin memesan setup Auto Invoice:\n\n📅 Tanggal: ${dateStr}\n👤 Client: ${name}\n No. WA/Telegram: ${phone}\n📦 Paket: ${pkg}\n💰 Harga: ${price}\n💳 Pembayaran via: ${payment}\n\nMohon bantuannya untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.\n\n---\n🏦 Info Pembayaran:\nMandiri: 1490015072418\nE-Wallet: 081258220963\n\n📌 CATATAN:\nMohon kirim bukti Pembayaran ke chat ini sebelum kami proses. Lalu setelah diproses, Telegram akan otomatis mengirimkan status BERHASIL dan Anda bisa mengecek paket yang sudah dipilih.`;
             
             // Salin otomatis ke clipboard (memori HP/PC) agar user tinggal Paste jika Telegram mereset teksnya
             navigator.clipboard.writeText(text).catch(err => console.log('Clipboard gagal'));
