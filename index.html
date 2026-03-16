@@ -169,7 +169,7 @@
             
             // Format pesan tracking
             const price = document.getElementById('pkgPrice').value;
-            const text = `Halo CS, saya ingin memesan setup Auto Invoice:\n\n📅 Tanggal: ${dateStr}\n👤 Client: ${name}\n 📞 No. WA/Telegram: ${phone}\n📦 Paket: ${pkg}\n💰 Harga: ${price}\n💳 Pembayaran via: ${payment}\n\nMohon bantuannya untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.\n\n---\n🏦 Info Pembayaran:\nMandiri: 1490015072418\nE-Wallet: 081258220963\n\n📌 CATATAN:\nMohon kirim bukti Pembayaran ke chat ini sebelum kami proses. Lalu setelah diproses, Telegram akan otomatis mengirimkan status BERHASIL dan Anda bisa mengecek paket yang sudah dipilih.`;
+            const text = `Halo CS, saya ingin memesan setup Auto Invoice:\n\n📅 Tanggal: ${dateStr}\n👤 Client: ${name}\n📞 No. WA/Telegram: ${phone}\n📦 Paket: ${pkg}\n💰 Harga: ${price}\n💳 Pembayaran via: ${payment}\n\nMohon bantuannya untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.\n\n---\n🏦 Info Pembayaran:\nMandiri: 1490015072418\nE-Wallet: 081258220963\n\n📌 CATATAN:\nMohon kirim bukti Pembayaran ke chat ini sebelum kami proses. Lalu setelah diproses, Telegram akan otomatis mengirimkan status BERHASIL dan Anda bisa mengecek paket yang sudah dipilih.`;
             
             // Salin otomatis ke clipboard (memori HP/PC) agar user tinggal Paste jika Telegram mereset teksnya
             navigator.clipboard.writeText(text).catch(err => console.log('Clipboard gagal'));
