@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Auto Invoice Pro | Portfolio</title>
+    <!-- Menggunakan Tailwind CSS untuk desain yang cepat dan modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">AutoInvoice.id</h1>
+            <div class="space-x-6">
+                <a href="#portfolio" class="hover:text-blue-500 font-medium">Portfolio</a>
+                <a href="#pricing" class="hover:text-blue-500 font-medium">Pricing</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section / Portfolio -->
+    <section id="portfolio" class="max-w-6xl mx-auto py-16 px-4 text-center">
+        <h2 class="text-4xl font-extrabold mb-4">Solusi Cerdas Otomatisasi Penagihan</h2>
+        <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Sistem ini dirancang untuk mempermudah bisnis Anda dalam mengelola tagihan, memantau pembayaran, dan menganalisis pendapatan secara real-time. Cocok untuk UMKM hingga Perusahaan.</p>
+        
+        <h3 class="text-2xl font-bold mb-6 text-gray-700">⭐ Apa Kata Klien Kami?</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <!-- Review 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                <p class="text-yellow-400 mb-2">⭐⭐⭐⭐⭐ (4.8/5)</p>
+                <p class="italic text-gray-600 mb-4">"Sangat membantu! Waktu rekap penagihan saya yang dulunya berhari-hari sekarang cuma hitungan menit."</p>
+                <p class="font-bold text-gray-800">Budi Santoso</p>
+                <p class="text-sm text-gray-500">CEO TechSolutions</p>
+            </div>
+            <!-- Review 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                <p class="text-yellow-400 mb-2">⭐⭐⭐⭐½ (4.6/5)</p>
+                <p class="italic text-gray-600 mb-4">"Tampilannya sangat profesional. Cocok dijadikan sistem internal dan meminimalisir human error."</p>
+                <p class="font-bold text-gray-800">Siti Aisyah</p>
+                <p class="text-sm text-gray-500">Finance Manager</p>
+            </div>
+            <!-- Review 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                <p class="text-yellow-400 mb-2">⭐⭐⭐⭐⭐ (4.8/5)</p>
+                <p class="italic text-gray-600 mb-4">"Analytics-nya juara. Saya bisa tahu persis proyek mana yang sudah lunas dan mana yang masih pending."</p>
+                <p class="font-bold text-gray-800">Andi Wijaya</p>
+                <p class="text-sm text-gray-500">Freelancer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="bg-gray-100 py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Paket Berlangganan</h2>
+            <p class="text-gray-600 mb-12">Pilih paket yang paling sesuai dengan kebutuhan bisnis Anda.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Paket Basic -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 flex flex-col">
+                    <h3 class="text-xl font-bold text-gray-700 mb-4">Basic</h3>
+                    <p class="text-4xl font-extrabold mb-6">Rp 79rb<span class="text-base font-normal text-gray-500"> /bln</span></p>
+                    <ul class="text-left space-y-3 mb-8 flex-grow">
+                        <li>✔️ Template Google Sheet Standar</li>
+                        <li>✔️ Dashboard Monitoring</li>
+                        <li>✔️ Maksimal 100 Invoice/bln</li>
+                        <li>✔️ Gratis Hosting & Maintenance</li>
+                    </ul>
+                    <button onclick="openModal('Basic', 'Rp 79.000 / bln')" class="block w-full py-3 px-4 bg-gray-100 text-gray-800 font-bold rounded-lg hover:bg-gray-200 transition">Pilih Basic</button>
+                </div>
+
+                <!-- Paket Pro (Terpopuler) -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 border-2 border-blue-500 flex flex-col relative transform md:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow">
+                        ⭐ Terpopuler
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-700 mb-4">Pro</h3>
+                    <p class="text-4xl font-extrabold text-blue-600 mb-6">Rp 188rb<span class="text-base font-normal text-gray-500"> /bln</span></p>
+                    <ul class="text-left space-y-3 mb-8 flex-grow">
+                        <li>✔️ <b>Unlimited Invoices</b></li>
+                        <li>✔️ Custom Google Sheet Klien</li>
+                        <li>✔️ <b>Auto Kirim Invoice ke Telegram</b></li>
+                        <li>✔️ Priority Support</li>
+                    </ul>
+                    <button onclick="openModal('Pro', 'Rp 188.000 / bln')" class="block w-full py-3 px-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition shadow-lg">Pilih Pro</button>
+                </div>
+
+                <!-- Paket Source Code -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-200 flex flex-col bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+                    <h3 class="text-xl font-bold text-gray-300 mb-4">Paket Custom</h3>
+                    <p class="text-4xl font-extrabold mb-6">Rp 260rb<span class="text-base font-normal text-gray-400"> /sekali</span></p>
+                    <ul class="text-left space-y-3 mb-8 flex-grow">
+                        <li>✔️ <b>Terima Beres (Siap Pakai)</b></li>
+                        <li>✔️ Setup G-Sheet ➔ Bot Telegram</li>
+                        <li>✔️ Otomatis Kirim Lampiran Invoice</li>
+                        <li>✔️ Sekali Bayar (Layanan Setup)</li>
+                    </ul>
+                    <button onclick="openModal('Custom', 'Rp 260.000 / sekali')" class="block w-full py-3 px-4 bg-yellow-500 text-gray-900 font-bold rounded-lg hover:bg-yellow-400 transition">Pesan Paket Custom</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center">
+        <p>&copy; 2024 AutoInvoice.id - All Rights Reserved.</p>
+    </footer>
+
+    <!-- Modal Form Pemesanan -->
+    <div id="orderModal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center px-4 transition-opacity">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
+            <p class="text-lg text-gray-800 font-medium mb-6">Hubungi CS Telegram <b>@CS_Auto_invoice</b> ini untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.</p>
+            
+            <form id="orderForm" onsubmit="submitForm(event)">
+                <input type="hidden" id="pkgName">
+                <input type="hidden" id="pkgPrice">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2 text-sm">Nama Client / Perusahaan</label>
+                    <input type="text" id="clientName" required placeholder="Contoh: PT. Maju Jaya / Budi" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-bold mb-2 text-sm">Pembayaran via apa?</label>
+                    <select id="paymentMethod" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                        <option value="Transfer BCA">Transfer BCA</option>
+                        <option value="Transfer Mandiri">Transfer Mandiri</option>
+                        <option value="Transfer BNI">Transfer BNI</option>
+                        <option value="QRIS">QRIS</option>
+                        <option value="E-Wallet">E-Wallet (OVO/Dana/GoPay)</option>
+                    </select>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-bold hover:bg-gray-200 transition">Batal</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg font-bold hover:bg-blue-700 transition shadow-md">Kirim ke Telegram</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(pkg, price) {
+            document.getElementById('orderModal').classList.remove('hidden');
+            document.getElementById('pkgName').value = pkg;
+            document.getElementById('pkgPrice').value = price;
+        }
+        function closeModal() {
+            document.getElementById('orderModal').classList.add('hidden');
+        }
+        function submitForm(e) {
+            e.preventDefault();
+            const pkg = document.getElementById('pkgName').value;
+            const name = document.getElementById('clientName').value;
+            const payment = document.getElementById('paymentMethod').value;
+            
+            // Ambil tanggal saat ini (format lokal)
+            const dateOpts = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const dateStr = new Date().toLocaleDateString('id-ID', dateOpts);
+            
+            // Format pesan tracking
+            const price = document.getElementById('pkgPrice').value;
+            const text = `Halo CS, saya ingin memesan setup Auto Invoice:\n\n📅 Tanggal: ${dateStr}\n👤 Client: ${name}\n📦 Paket: ${pkg}\n💰 Harga: ${price}\n💳 Pembayaran via: ${payment}\n\nMohon bantuannya untuk Setup G-Sheet sampai Auto Kirim Invoice ke Telegram siap pakai.\n\n---\n🏦 Info Pembayaran:\nMandiri: 1490015072418\nE-Wallet: 081258220963\n\n📌 CATATAN:\nMohon kirim bukti Pembayaran ke chat ini sebelum kami proses. Lalu setelah diproses, Telegram akan otomatis mengirimkan status BERHASIL dan Anda bisa mengecek paket yang sudah dipilih.`;
+            
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://t.me/CS_Auto_invoice?text=${encodedText}`, '_blank');
+            closeModal();
+        }
+    </script>
+
+</body>
+</html>
